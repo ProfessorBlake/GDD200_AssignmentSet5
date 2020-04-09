@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class Spinner : MonoBehaviour
 {
-	private bool isSpinning = false;
+	private float speed = 0f;
 
 	private void Update()
 	{
-		if(isSpinning)
-		{
-			transform.Rotate(new Vector3(5f, 10f, 20f) * Time.deltaTime);
-		}
+		transform.Rotate(new Vector3(speed, speed, speed) * Time.deltaTime);
 	}
 
-	public void ToggleSpin()
+	public void SetSpinSpeed(float newSpeed)
 	{
-		isSpinning = !isSpinning; // Toggle a bool between true and false.
-		Debug.Log("Spinner: " + isSpinning);
+		speed = newSpeed;
 	}
 }
