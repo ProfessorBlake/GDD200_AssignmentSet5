@@ -6,11 +6,11 @@ public class Health : MonoBehaviour
 {
 	public Transform HealthIconContainer;
 
-	[SerializeField] private int health = 1;
+	public int health = 1;
 
 	public void ModifyHealth(int hpChange)
 	{
-		if (health + hpChange >= 0 && health + hpChange <= 5)
+		if (health + hpChange >= 0 && health + hpChange <= HealthIconContainer.childCount)
 		{
 			health += hpChange;
 
